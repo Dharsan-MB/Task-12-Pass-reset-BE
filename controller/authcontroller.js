@@ -88,7 +88,7 @@ const authController = {
         from: "dharsanmb3@gmail.com",
         to: user.email,
         subject: "passsword reset",
-        text: `reset the password for your account \n\n please use the following token to reset the password :${token}`,
+        text: `To reset your account password,\n\n please use the following token :${token}`,
       };
       transporter.sendMail(message, (err, info) => {
         if (err) {
@@ -120,7 +120,7 @@ const authController = {
       await user.save();
       response
         .status(200)
-        .json({ message: "Password has been successfully reset" });
+        .json({ message: "Password has been successfully reseted" });
     } catch (error) {
       console.error("Error during password reset:", error.message);
       response.status(500).json({ message: "Internal server error" });
